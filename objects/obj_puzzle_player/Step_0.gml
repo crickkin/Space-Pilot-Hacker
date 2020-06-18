@@ -17,6 +17,9 @@ if (!global.time_slow)
 			vertical = 0;
 
 		if (horizontal != 0 || vertical != 0) {
+			audio_play_sound(sfx_player_movement, 10, false);
+			audio_sound_gain(sfx_player_movement, global.master_volume * global.sfx_volume, 0);
+			
 			if (!place_meeting(x, y, obj_starting_point)) {
 				line_count++;
 				var line = instance_create_layer(x, y, "Puzzle_Piece", obj_line);

@@ -9,6 +9,8 @@
 	#region Shoot
 		if (can_shoot) {
 			if (shoot && !global.time_slow) {
+				audio_play_sound(sfx_shot_player, 5, false);
+				audio_sound_gain(sfx_shot_player, global.master_volume * global.sfx_volume, 0);
 				bullets = 0;
 				state = player_state.shooting;
 				can_shoot = false;
@@ -45,6 +47,9 @@
 
 #region Routine
 	if (damage > 0) {
+		audio_play_sound(sfx_damage, 15, false);
+		audio_sound_gain(sfx_damage, global.master_volume * global.sfx_volume, 0);
+		
 		hp -= damage;
 		damage_animation = true;
 		var shake = instance_create_depth(x, y, 0, obj_screenshake);

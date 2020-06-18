@@ -46,3 +46,12 @@ state = puzzle_state.bullet_hell;
 repeat(3) {
 	Spawn_Hazard(x_spawn_offset);
 }
+
+global.master_volume = .7;
+global.music_volume = .5;
+global.sfx_volume = 1;
+
+audio_play_sound(snd_gameplay_shooter, 1, true);
+audio_sound_gain(snd_gameplay_shooter, global.master_volume * global.music_volume, 0);
+audio_play_sound(snd_gameplay_puzzle, 1, true);
+audio_sound_gain(snd_gameplay_puzzle, 0, 0);

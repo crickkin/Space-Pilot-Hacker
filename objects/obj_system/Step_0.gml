@@ -33,6 +33,12 @@ if (game_over)
 				state = puzzle_state.hacking_puzzle;
 				Start_Puzzle(grid_cell_size, grid_cell_width, grid_cell_height);
 				path_list = ds_list_create();
+				
+				audio_sound_gain(snd_gameplay_puzzle, global.master_volume * global.music_volume, 0);
+				audio_sound_gain(snd_gameplay_shooter, 0, 0);
+				
+				audio_play_sound(sfx_puzzle_started, 10, false);
+				audio_sound_gain(sfx_puzzle_started, global.master_volume * global.sfx_volume, 0);
 			}
 		
 			break;
@@ -40,6 +46,8 @@ if (game_over)
 			if (puzzle_trigger && puzzle_points >= 3) {
 				puzzle_points -= 3;
 				global.time_slow = false;
+				audio_play_sound(sfx_puzzle_closed, 10, false);
+				audio_sound_gain(sfx_puzzle_closed, global.master_volume * global.sfx_volume, 0);
 			}
 		
 			if (!global.time_slow) {
@@ -49,12 +57,22 @@ if (game_over)
 						obj_player_ship.energy += 3;
 						obj_player_ship.energy = clamp(obj_player_ship.energy, 0, obj_player_ship.max_energy);
 					}
+					audio_play_sound(sfx_goal, 10, false);
+					audio_sound_gain(sfx_goal, global.master_volume * global.sfx_volume, 0);
 					success = false;
+				}
+				else {
+					audio_play_sound(sfx_puzzle_failed, 10, false);
+					audio_sound_gain(sfx_puzzle_failed, global.master_volume * global.sfx_volume, 0);
+					show_debug_message("failed");
 				}
 				
 				global.time_speed = 1;
 				layer_set_visible(puzzle_background_layer, false);
 				state = puzzle_state.bullet_hell;
+				
+				audio_sound_gain(snd_gameplay_shooter, global.master_volume * global.music_volume, 0);
+				audio_sound_gain(snd_gameplay_puzzle, 0, 0);
 				
 				for (var i = 0; i < ds_list_size(path_list); i++) {
 					instance_destroy(path_list[| i]);
