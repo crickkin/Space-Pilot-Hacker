@@ -1,7 +1,7 @@
 randomize();
 
 game_over = false;
-game_over_text_color = make_color_rgb(212, 30, 60); //174, 24, 58);
+game_over_text_color = make_color_rgb(212, 30, 60);
 
 game_over_option = 0;
 
@@ -9,6 +9,11 @@ saved = false;
 
 yellow = make_color_rgb(255, 245, 64);
 gray = make_color_rgb(146, 143, 184);
+cyan = make_color_rgb(120, 215, 255);
+
+text_alpha = 1;
+fading = true;
+fade_amount = 0.025;
 
 global.time_slow = false;
 global.time_speed = 1;
@@ -58,11 +63,12 @@ ini_open("Settings/nonejam.ini");
 global.highscore = ini_read_real("save1", "score", 0);
 ini_close();
 
-global.master_volume = 0; //.7;
-global.music_volume = .5;
-global.sfx_volume = 1;
+if (!audio_is_playing(snd_gameplay_shooter)) {
+	audio_play_sound(snd_gameplay_shooter, 1, true);
+}
+if (!audio_is_playing(snd_gameplay_puzzle)) {
+	audio_play_sound(snd_gameplay_puzzle, 1, true);
+}
 
-audio_play_sound(snd_gameplay_shooter, 1, true);
 audio_sound_gain(snd_gameplay_shooter, global.master_volume * global.music_volume, 0);
-audio_play_sound(snd_gameplay_puzzle, 1, true);
 audio_sound_gain(snd_gameplay_puzzle, 0, 0);

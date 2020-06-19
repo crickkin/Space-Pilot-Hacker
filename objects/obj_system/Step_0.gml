@@ -13,7 +13,7 @@ if (keyboard_check_pressed(vk_f1)) {
 }
 
 if (keyboard_check_pressed(vk_f2)) {
-	game_restart();
+	Restart_Game();
 }
 
 if (_score > global.highscore) {
@@ -21,7 +21,6 @@ if (_score > global.highscore) {
 }
 
 if (game_over) {
-	
 	if (!saved) {
 		ini_open("Settings/nonejam.ini");
 		ini_write_real("save1", "score", global.highscore);
@@ -31,12 +30,30 @@ if (game_over) {
 	
 	if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_down)) {
 		game_over_option = !game_over_option;
+		audio_play_sound(sfx_ui_toggle, 10, false);
+		audio_sound_gain(sfx_ui_toggle, global.master_volume * global.sfx_volume, 0);
 	}
 	
 	if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)) {
 		if (game_over_option == 0) {
 			Restart_Game();
+			audio_play_sound(sfx_ui_confirm, 10, false);
+			audio_sound_gain(sfx_ui_confirm, global.master_volume * global.sfx_volume, 0);
 		}
+		else {
+			global.time_slow = false;
+			global.time_speed = 1;
+			audio_stop_all();
+			audio_play_sound(sfx_ui_confirm, 10, false);
+			audio_sound_gain(sfx_ui_confirm, global.master_volume * global.sfx_volume, 0);
+			room_goto(rm_main_menu);
+		}
+	}
+	
+	text_alpha += (fading) ? -fade_amount : fade_amount;
+
+	if ((fading && text_alpha <= 0) || (!fading && text_alpha >= 1)) {
+		fading = !fading;
 	}
 	
 	exit;

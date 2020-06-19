@@ -10,7 +10,7 @@
 		if (can_shoot) {
 			if (shoot && !global.time_slow) {
 				audio_play_sound(sfx_shot_player, 5, false);
-				audio_sound_gain(sfx_shot_player, global.master_volume * global.sfx_volume, 0);
+				audio_sound_gain(sfx_shot_player, global.master_volume * global.sfx_volume * 0.7, 0);
 				bullets = 0;
 				state = player_state.shooting;
 				can_shoot = false;
