@@ -52,8 +52,27 @@ if (game_over) {
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
 	var text_size = 5;
-	draw_text_transformed_color((view_width/2) + 10, (view_height/2 - 120) + 10, "Game Over", text_size, text_size, 0, c_black, c_black, c_black, c_black, 1);
-	draw_text_transformed_color(view_width/2, view_height/2 - 120, "Game Over", text_size, text_size, 0, game_over_text_color, game_over_text_color, game_over_text_color, game_over_text_color, 1);
+	draw_text_transformed_color((view_width/2) + 10, 90, "Game Over", text_size, text_size, 0, c_black, c_black, c_black, c_black, 1);
+	draw_text_transformed_color(view_width/2, 100, "Game Over", text_size, text_size, 0, game_over_text_color, game_over_text_color, game_over_text_color, game_over_text_color, 1);
+	
+	draw_text_transformed_color(view_width/2, view_height/2 - 40, "Highscore", 2, 2, 0, c_aqua, c_aqua, c_aqua, c_aqua, 1);
+	draw_text_transformed_color(view_width/2, view_height/2 + 40, "Score", 2, 2, 0, c_aqua, c_aqua, c_aqua, c_aqua, 1);
+	
+	draw_text_transformed(view_width/2, view_height/2, global.highscore, 2, 2, 0);
+	draw_text_transformed(view_width/2, view_height/2 + 80, _score, 2, 2, 0);
+	
+	switch (game_over_option) {
+		case 0:
+			draw_text_transformed_color(view_width/2, view_height - 120, "Retry", 2, 2, 0, yellow, yellow, yellow, yellow, 1);
+			draw_text_transformed_color(view_width/2, view_height- 70, "Main Menu", 2, 2, 0, gray, gray, gray, gray, 1);
+			break;
+		case 1:
+			draw_text_transformed_color(view_width/2, view_height - 120, "Retry", 2, 2, 0, gray, gray, gray, gray, 1);
+			draw_text_transformed_color(view_width/2, view_height- 70, "Main Menu", 2, 2, 0, yellow, yellow, yellow, yellow, 1);
+			break;
+		default:
+			break;
+	}
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 }

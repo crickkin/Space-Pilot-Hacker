@@ -16,8 +16,31 @@ if (keyboard_check_pressed(vk_f2)) {
 	game_restart();
 }
 
-if (game_over)
+if (_score > global.highscore) {
+	global.highscore = _score;
+}
+
+if (game_over) {
+	
+	if (!saved) {
+		ini_open("Settings/nonejam.ini");
+		ini_write_real("save1", "score", global.highscore);
+		ini_close();
+		saved = true;
+	}
+	
+	if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_down)) {
+		game_over_option = !game_over_option;
+	}
+	
+	if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space)) {
+		if (game_over_option == 0) {
+			Restart_Game();
+		}
+	}
+	
 	exit;
+}
 
 #region State Machine
 	switch (state) {
@@ -61,10 +84,9 @@ if (game_over)
 					audio_sound_gain(sfx_goal, global.master_volume * global.sfx_volume, 0);
 					success = false;
 				}
-				else {
+				else if (!puzzle_trigger) {
 					audio_play_sound(sfx_puzzle_failed, 10, false);
 					audio_sound_gain(sfx_puzzle_failed, global.master_volume * global.sfx_volume, 0);
-					show_debug_message("failed");
 				}
 				
 				global.time_speed = 1;

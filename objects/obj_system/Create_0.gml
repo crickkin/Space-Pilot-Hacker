@@ -1,7 +1,14 @@
 randomize();
 
 game_over = false;
-game_over_text_color = make_color_rgb(174, 24, 58);
+game_over_text_color = make_color_rgb(212, 30, 60); //174, 24, 58);
+
+game_over_option = 0;
+
+saved = false;
+
+yellow = make_color_rgb(255, 245, 64);
+gray = make_color_rgb(146, 143, 184);
 
 global.time_slow = false;
 global.time_speed = 1;
@@ -20,7 +27,7 @@ state = puzzle_state.bullet_hell;
 	_score = 0;
 	puzzle_points = 0;
 
-	x_spawn_offset = 30
+	x_spawn_offset = 32;
 
 	player_hp = 0;
 	player_max_hp = 0;
@@ -47,7 +54,11 @@ repeat(3) {
 	Spawn_Hazard(x_spawn_offset);
 }
 
-global.master_volume = .7;
+ini_open("Settings/nonejam.ini");
+global.highscore = ini_read_real("save1", "score", 0);
+ini_close();
+
+global.master_volume = 0; //.7;
 global.music_volume = .5;
 global.sfx_volume = 1;
 

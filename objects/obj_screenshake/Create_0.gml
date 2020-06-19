@@ -1,7 +1,7 @@
 camera = view_camera[0];
 
-camera_x = camera_get_view_x(camera);
-camera_y = camera_get_view_y(camera);
+camera_x = 0;
+camera_y = 0;
 
 going_right = true;
 
