@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "180329bb-7e69-4ad4-a597-9597b96a49c0",
+            "Value": {
+                "id": "e58eb524-fa82-4c79-866a-07164a9f46ce",
+                "resourcePath": "views\\180329bb-7e69-4ad4-a597-9597b96a49c0.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "19a6beb8-7642-4574-af77-9b66fd1685c1",
             "Value": {
                 "id": "b9767e60-1eb2-49b6-ab2c-ac41e284dd61",
@@ -375,11 +383,27 @@
             }
         },
         {
+            "Key": "5cb0db9e-bdf0-43c5-bb06-1e9e6ae200f3",
+            "Value": {
+                "id": "be820dcf-9f28-4e8c-8990-8899dbef615c",
+                "resourcePath": "sprites\\spr_bg_stars_2\\spr_bg_stars_2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5d162564-f27c-4763-9626-787d129610d1",
             "Value": {
                 "id": "415de3e6-4358-4152-9876-d5178daf310c",
                 "resourcePath": "objects\\obj_puzzle_explosion\\obj_puzzle_explosion.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5f5212e7-d04e-42fa-b5ef-c0ce0ff4b815",
+            "Value": {
+                "id": "3b0b94d4-1c01-456a-8fcf-d9e7f2e7979f",
+                "resourcePath": "sprites\\spr_bg_stars\\spr_bg_stars.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -858,7 +882,7 @@
             "Key": "effef7f5-0b4c-4afe-9ac0-e96cf695f823",
             "Value": {
                 "id": "ddf693e3-93be-4f3b-890a-27ec557edd4a",
-                "resourcePath": "sprites\\spr_background\\spr_background.yy",
+                "resourcePath": "sprites\\spr_bg_nebula\\spr_bg_nebula.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -916,6 +940,14 @@
                 "id": "cd476197-97a4-4510-961b-1c28c4c384ff",
                 "resourcePath": "views\\fac0aca4-4d0d-4ba7-918a-82f0406b05c0.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "fae89f66-0263-467d-9472-87338243a45e",
+            "Value": {
+                "id": "ea558dd5-4d47-4019-a6d3-8a06bf17ca54",
+                "resourcePath": "sprites\\spr_bg_planets\\spr_bg_planets.yy",
+                "resourceType": "GMSprite"
             }
         }
     ],
