@@ -399,6 +399,14 @@
             }
         },
         {
+            "Key": "49f1edb0-ecc3-4329-a8d4-ed2508cd5e73",
+            "Value": {
+                "id": "e1a8aa7b-818d-482c-98b5-a4915af9eb06",
+                "resourcePath": "sounds\\sfx_puzzle_explosion\\sfx_puzzle_explosion.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "4cd4d883-c7d2-4fd7-a57c-bd34ee085170",
             "Value": {
                 "id": "801cbda7-fe6e-4d9e-80d9-670642d979e2",

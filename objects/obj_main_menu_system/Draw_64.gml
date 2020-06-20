@@ -75,10 +75,10 @@ else if (room == rm_credits) {
 	draw_text_transformed_color(view_width/2, view_height/2 + 25, "Arte e Musica", 2, 2, 0, blue, blue, blue, blue, 1);
 	
 	draw_text_transformed_color(view_width/2 + 2, view_height/2 + 82, "r nsen", 1.5, 1.5, 0, c_black, c_black, c_black, c_black, 1);
-	draw_text_transformed_color(view_width/2 - 28, view_height/2 + 82, "3", 1.5, 1.5, 0, c_black, c_black, c_black, c_black, 1);
+	draw_text_transformed_color(view_width/2 - 24, view_height/2 + 82, "3", 1.5, 1.5, 0, c_black, c_black, c_black, c_black, 1);
 	
 	draw_text_transformed(view_width/2, view_height/2 + 80, "r nsen", 1.5, 1.5, 0);
-	draw_text_transformed_color(view_width/2 - 26, view_height/2 + 80, "3", 1.5, 1.5, 0, title_color, title_color, title_color, title_color, 1);
+	draw_text_transformed_color(view_width/2 - 26, view_height/2 + 79, "3", 1.5, 1.5, 0, title_color, title_color, title_color, title_color, 1);
 	
 	draw_set_valign(fa_top);
 	exit;

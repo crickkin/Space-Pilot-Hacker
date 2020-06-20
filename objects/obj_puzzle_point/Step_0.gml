@@ -2,7 +2,7 @@
 	var player = instance_place(x, y, obj_player_ship);
 	if (player != noone) {
 		audio_play_sound(sfx_collect_point, 5, false);
-		audio_sound_gain(sfx_collect_point, global.master_volume * global.sfx_volume, 0);
+		audio_sound_gain(sfx_collect_point, global.master_volume * global.sfx_volume * .7, 0);
 		
 		obj_system.puzzle_points++;
 		instance_destroy();

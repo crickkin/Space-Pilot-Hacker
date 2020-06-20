@@ -40,9 +40,16 @@ draw_rectangle_color(20, 20, 20 + ((player_max_hp * 100)/player_max_hp), 30, c_w
 draw_text_ext_colour(22, 42, "score: " + string(_score), 1, 300, c_black, c_black, c_black, c_black, 1);
 draw_text(20, 40, "score: " + string(_score));
 
-draw_sprite_ext(spr_pp_icon, 0, view_width - 100, 12, 0.9, 0.9, 0, c_white, 0.8);
-draw_text_ext_colour(view_width - 58, 22, string(puzzle_points), 1, 58, c_black, c_black, c_black, c_black, 1);
-draw_text(view_width - 60, 20, string(puzzle_points));
+if (state == puzzle_state.bullet_hell) {
+	draw_sprite_ext(spr_pp_icon, 0, view_width - 100, 12, 0.9, 0.9, 0, c_white, 0.8);
+	draw_text_ext_colour(view_width - 58, 22, string(puzzle_points), 1, 58, c_black, c_black, c_black, c_black, 1);
+	draw_text(view_width - 60, 20, string(puzzle_points));
+}
+else if (state == puzzle_state.hacking_puzzle) {
+	draw_sprite_ext(spr_pp_icon, 0, view_width - 220, 12, 1.5, 1.5, 0, c_white, 0.8);
+	draw_text_transformed_color(view_width - 128, 28, string(puzzle_points), 1.5, 1.5, 0, c_black, c_black, c_black, c_black, 1);
+	draw_text_transformed(view_width - 130, 26, string(puzzle_points), 1.5, 1.5, 0);
+}
 
 if (game_over) {
 	draw_set_alpha(0.7);

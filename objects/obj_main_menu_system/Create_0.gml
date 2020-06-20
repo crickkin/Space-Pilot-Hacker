@@ -3,7 +3,7 @@ option_lenght = 4;
 
 global.master_volume = .7;
 global.music_volume = .5;
-global.sfx_volume = 1;
+global.sfx_volume = .9;
 
 if (!audio_is_playing(snd_main_screen))
 	audio_play_sound(snd_main_screen, 1, true);
