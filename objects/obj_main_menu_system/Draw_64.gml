@@ -37,6 +37,9 @@ if (room == rm_how_to_play) {
 		draw_sprite_ext(spr_buttons_enter, 0, view_width - 295, 200, 1.5, 1.5, 0, c_white, 1);
 		draw_text_transformed_color(view_width - 215, 205, "- Confirmar", 1.5, 1.5, 0, c_black, c_black, c_black, c_black, 1);
 		draw_text_transformed_color(view_width - 210, 200, "- Confirmar", 1.5, 1.5, 0, blue, blue, blue, blue, 1);
+		
+		draw_text_transformed_color(75, 285, "f4 - fullscreen", 1.5, 1.5, 0, c_black, c_black, c_black, c_black, 1);
+		draw_text_transformed_color(75, 280, "f4 - fullscreen", 1.5, 1.5, 0, blue, blue, blue, blue, 1);
 	#endregion
 	
 	#region Objetivo

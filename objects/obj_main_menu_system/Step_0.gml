@@ -2,6 +2,12 @@ var select_up = keyboard_check_pressed(vk_up);
 var select_down = keyboard_check_pressed(vk_down);
 var confirm = keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter);
 
+var fullscreen_trigger = keyboard_check_pressed(vk_f4);
+	
+if (fullscreen_trigger) {
+	window_set_fullscreen(!window_get_fullscreen());
+}
+
 if (room == rm_how_to_play || room == rm_credits) {
 	var back = keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_backspace);
 	
