@@ -46,3 +46,6 @@ enum player_state {
 }
 
 state = player_state.moving;
+
+audio_play_sound(sfx_propulsion, 2, true);
+audio_sound_gain(sfx_propulsion, global.master_volume * global.sfx_volume, 0);
